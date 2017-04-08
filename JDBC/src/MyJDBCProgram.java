@@ -6,6 +6,7 @@ public class MyJDBCProgram {
 	DeleteCustomer deleteCustomer;
 	insertCustomer ic;
 	QueryMetadata metadata;
+	processSQL pSQL;
 
 
 	//Asks the user to input a username and password for their MySQL database to set up connection
@@ -51,6 +52,11 @@ public class MyJDBCProgram {
 	/* Prints the metadata of the database */
 	public void printMetadata() throws SQLException{
 		metadata.getMetaData();
+	}
+	
+	public void processSQLQuery(){
+		pSQL = new processSQL(connection);
+		pSQL.processSQLQuery();
 	}
 	
 }

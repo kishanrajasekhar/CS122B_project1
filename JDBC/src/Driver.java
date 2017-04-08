@@ -45,6 +45,7 @@ public class Driver {
 							break;
 						case 6:
 							System.out.println("processSQL function");
+							jdbc.processSQLQuery();
 							break;
 						case 7:
 							System.out.println("Exited the menu. Have a fantastic day everyone");

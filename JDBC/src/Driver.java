@@ -36,6 +36,7 @@ public class Driver {
 							break;
 						case 4:
 							System.out.println("deleteCustomer function");
+							jdbc.deleteCustomer();
 							break;
 						case 5:
 							System.out.println("getMetadata function");

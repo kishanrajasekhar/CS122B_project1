@@ -34,9 +34,9 @@ public class DeleteCustomer
 											//and the second index is the last name
 		
 		System.out.println("Enter the first name of the Customer: ");
-		String firstName = sc.next();
+		String firstName = Driver.chooseStringOption(sc).trim();
 		System.out.println("Enter the last name of the Customer: ");
-		String lastName = sc.next();
+		String lastName = Driver.chooseStringOption(sc).trim();
 		result[0] = firstName;
 		result[1] = lastName;
 		return result;

@@ -25,19 +25,19 @@ public class MovieQuery {
 			break;
 		case 2:
 			System.out.print("Enter star's first name: ");
-			firstName = sc.next();
+			firstName = Driver.chooseStringOption(sc).trim();
 			query = createFirstNameQuery(firstName);
 			break;
 		case 3:
 			System.out.print("Enter star's last name: ");
-			lastName = sc.next();
+			lastName = Driver.chooseStringOption(sc).trim();
 			query = createLastNameQuery(lastName);
 			break;
 		case 4:
 			System.out.print("Enter star's first name: ");
-			firstName = sc.next();
+			firstName = Driver.chooseStringOption(sc).trim();
 			System.out.print("Enter star's last name: ");
-			lastName = sc.next();
+			lastName = Driver.chooseStringOption(sc).trim();
 			query = createFullNameQuery(firstName, lastName);
 			break;
 		}

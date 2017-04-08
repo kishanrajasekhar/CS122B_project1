@@ -18,7 +18,7 @@ public class insertCustomer{
 		//Read in customer name
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter your name (First Last): ");
-		String name = sc.nextLine().trim();
+		String name = sc.nextLine().trim(); 
 		String first,last;
 		
 		

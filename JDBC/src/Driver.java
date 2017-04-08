@@ -45,6 +45,9 @@ public class Driver {
 						case 6:
 							System.out.println("processSQL function");
 							break;
+						case 7:
+							System.out.println("Exited the menu. Have a fantastic day everyone");
+							return;
 						default:
 							System.out.println("Invalid selection");
 							break;
@@ -78,6 +81,17 @@ public class Driver {
 		}
 	}
 	
+	//Helper function to ensure the input is a String 
+	public static String chooseStringOption(Scanner sc){
+		while(!(sc.hasNext("[A-Za-z]+"))){
+			System.out.println("Please input a String");
+			sc.next();
+		}
+		String word = sc.next();
+		return word;
+	}
+	
+	//Helper function to print out all of the options 
 	public static void printMenuOptions(){
 		System.out.println("Select an option:");
 		System.out.println("1. Find a movie");

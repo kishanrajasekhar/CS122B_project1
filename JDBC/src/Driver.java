@@ -33,6 +33,7 @@ public class Driver {
 							break;
 						case 3:
 							System.out.println("insertCustomer function");
+							jdbc.insertCustomer();
 							break;
 						case 4:
 							System.out.println("deleteCustomer function");

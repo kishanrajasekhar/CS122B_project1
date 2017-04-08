@@ -4,6 +4,8 @@ public class MyJDBCProgram {
 	Connection connection;
 	InsertStar insertStar;
 	DeleteCustomer deleteCustomer;
+	insertCustomer ic;
+
 
 	//Asks the user to input a username and password for their MySQL database to set up connection
 	MovieQuery movieQuery;
@@ -39,4 +41,9 @@ public class MyJDBCProgram {
 		}
 	}	
 
+	public void insertCustomer() throws SQLException{
+		ic = new insertCustomer(connection);
+		ic.insertCustomerFunction();
+	}
+	
 }

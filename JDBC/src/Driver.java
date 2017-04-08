@@ -25,7 +25,7 @@ public class Driver {
 						option = chooseIntOption(sc, 1,7);
 						switch(option){
 						case 1:
-							System.out.println("findMovie function");
+							jdbc.queryMovie();
 							break;
 						case 2:
 							System.out.println("insertNewStar function");

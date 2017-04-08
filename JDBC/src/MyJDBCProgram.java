@@ -5,6 +5,7 @@ public class MyJDBCProgram {
 	InsertStar insertStar;
 	DeleteCustomer deleteCustomer;
 	insertCustomer ic;
+	QueryMetadata metadata;
 
 
 	//Asks the user to input a username and password for their MySQL database to set up connection
@@ -16,6 +17,7 @@ public class MyJDBCProgram {
 		connection = DriverManager.getConnection("jdbc:mysql:///moviedb?autoReconnect=true&useSSL=false",
 				username, password);
 		movieQuery = new MovieQuery(connection);
+		metadata = new QueryMetadata(connection);
 	}
 	
 	public void insertStar() throws SQLException{
@@ -44,6 +46,11 @@ public class MyJDBCProgram {
 	public void insertCustomer() throws SQLException{
 		ic = new insertCustomer(connection);
 		ic.insertCustomerFunction();
+	}
+	
+	/* Prints the metadata of the database */
+	public void printMetadata() throws SQLException{
+		metadata.getMetaData();
 	}
 	
 }

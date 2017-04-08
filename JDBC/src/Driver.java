@@ -41,6 +41,7 @@ public class Driver {
 							break;
 						case 5:
 							System.out.println("getMetadata function");
+							jdbc.printMetadata();
 							break;
 						case 6:
 							System.out.println("processSQL function");

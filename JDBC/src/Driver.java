@@ -7,6 +7,7 @@ public class Driver {
 	public static void main(String args[]){
 		Scanner sc = new Scanner(System.in);
 		MyJDBCProgram jdbc = new MyJDBCProgram();
+//		InsertStar insertStar = new InsertStar();
 		
 		while(true){
 			try{
@@ -28,6 +29,7 @@ public class Driver {
 							break;
 						case 2:
 							System.out.println("insertNewStar function");
+							jdbc.insertStar();
 							break;
 						case 3:
 							System.out.println("insertCustomer function");
@@ -41,18 +43,25 @@ public class Driver {
 						case 6:
 							System.out.println("processSQL function");
 							break;
+						default:
+							System.out.println("Invalid selection");
+							break;
 						}
 					}
 				}else{
+					System.out.println("Program exited. Thank you, have a nice day fam :) ");
 					break;
 				}
 			}
 			catch(InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e){
 				System.out.println("Connection Error or Login Error");
+				e.printStackTrace();
 			}
 		}
 	}
 	
+	
+	//Helper function to ensure the correct integer value was inputed
 	public static int chooseIntOption(Scanner sc, int start, int finish){
 		int result = Integer.MIN_VALUE;
 		while(true){

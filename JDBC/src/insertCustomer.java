@@ -57,7 +57,6 @@ public class insertCustomer{
 		
 		
 		//if customer has no credit card, do not add to database
-		//I used firstName because id was already initalized
 		if(id == null){
 			System.out.println("Customer first and last name not found, Customer not added to Database");
 			return;

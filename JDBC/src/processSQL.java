@@ -16,7 +16,7 @@ public class processSQL {
 		
 		//Grab user input and extract user command
 		//different commands require different calls to the connection
-		System.out.print("Enter a SQL command(SELECT, UPDATE, INSERT, DELETE): ");
+		System.out.println("Enter a SQL command(SELECT, UPDATE, INSERT, DELETE): ");
 		String query = sc.nextLine().trim();
 		String[] args = query.split("\\s+"); //remove whitespace
 		String command = args[0];
@@ -51,11 +51,12 @@ public class processSQL {
 				System.out.println("Number of rows modified: " + returnID);
 			}
 			else{
-				System.out.println("Error: Invalid SQL Command");
+				System.out.println("Error: SQL command does not match one of the above");
 			}			
 		} catch (SQLException e) {
-			System.out.println("Error: Invalid SQL Command");
-			e.printStackTrace();
+			System.out.println("Error: There was an error executing your SQL command: ");
+			System.out.println(e.toString());
+			System.out.println();
 		}
 		
 		

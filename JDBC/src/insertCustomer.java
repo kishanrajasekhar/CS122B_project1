@@ -40,10 +40,9 @@ public class insertCustomer{
 		
 	
 		//Grab into for insertion
-		String firstName = null, lastName = null, expiration = null;
-		int id = 0;
+		String id = null, firstName = null, lastName = null, expiration = null;
 		if(result.next()){
-			id 			= result.getInt(1);
+			id 			= result.getString(1);
 			firstName 	= result.getString(2);
 			lastName 	= result.getString(3);
 			expiration	= result.getString(4);
@@ -59,7 +58,7 @@ public class insertCustomer{
 		
 		//if customer has no credit card, do not add to database
 		//I used firstName because id was already initalized
-		if(firstName == null){
+		if(id == null){
 			System.out.println("Customer first and last name not found, Customer not added to Database");
 			return;
 		}
@@ -68,6 +67,7 @@ public class insertCustomer{
 		//insert customer into table
 		Statement update = connection.createStatement();
 		String queryString = String.format("INSERT INTO customers VALUES (%d, '%s', '%s', '%s', '%s', '%s', '%s');", null, firstName, lastName, id, "", "", "");
+		System.out.println(queryString);
 		int retID = update.executeUpdate(queryString);
 		System.out.println("retID = " + retID + "\n");
 	}

@@ -15,29 +15,14 @@ public class insertCustomer{
 		 * their credit card exists in the credit card table
 		 * */
 		
-		//Read in customer name
+		//Read in credit card ID
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter your name (First Last): ");
-		String name = sc.nextLine().trim(); 
-		String first,last;
-		
-		
-		//split into first,last name
-		if (name.contains(" ")){
-			String[] nameArray = name.split("\\s+");
-			first = nameArray[0];
-			last  = nameArray[1];
-		}
-		else{
-			first = "";
-			last = name;
-		}
-		
+		System.out.println("Enter your credit card ID: ");
+		String cc_id = sc.nextLine().trim();
 		
 		//Execute SQL statement that finds customer's credit card in table
 		Statement select = connection.createStatement();
-		ResultSet result = select.executeQuery("Select * from creditcards where first_name = '" + first + "' AND last_name = '" + last + "';");
-		
+		ResultSet result = select.executeQuery("Select * from creditcards where id = '" + cc_id + "';");
 	
 		//Grab into for insertion
 		String id = null, firstName = null, lastName = null, expiration = null;
@@ -58,7 +43,8 @@ public class insertCustomer{
 		
 		//if customer has no credit card, do not add to database
 		if(id == null){
-			System.out.println("Customer first and last name not found, Customer not added to Database");
+			System.out.println("Credit Card not found, Customer not added to Database");
+			System.out.println("Enter a correct credit card!");
 			return;
 		}
 		
@@ -70,5 +56,6 @@ public class insertCustomer{
 		int retID = update.executeUpdate(queryString);
 		System.out.println("retID = " + retID + "\n");
 	}
+
 	
 }

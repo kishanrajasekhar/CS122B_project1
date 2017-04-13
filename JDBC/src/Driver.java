@@ -55,7 +55,8 @@ public class Driver {
 				}
 			}
 			catch(InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e){
-				System.out.println("Connection Error or Login Error");
+				System.out.println("Connection Error or Login Error. Please reinput with the correct Login information");
+				System.out.println(e.toString());
 			}
 		}
 	}

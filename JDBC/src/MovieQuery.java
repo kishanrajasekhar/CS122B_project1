@@ -20,7 +20,7 @@ public class MovieQuery {
 		switch(option){
 		case 1:
 			System.out.print("Enter movie id: ");
-			id = sc.next();
+			id = sc.nextLine();
 			query = getMovieQueryFromId(id);
 			break;
 		case 2:

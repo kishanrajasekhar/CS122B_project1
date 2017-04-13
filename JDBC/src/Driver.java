@@ -69,6 +69,7 @@ public class Driver {
 			try{
 				result = Integer.parseInt(sc.next());
 				if(result>=start && result<=finish)
+					sc.nextLine();
 					return result;
 			}catch(NumberFormatException e){
 				System.out.println("Please input an integer");
@@ -81,9 +82,9 @@ public class Driver {
 	public static String chooseStringOption(Scanner sc){
 		while(!(sc.hasNext("[A-Za-z]+"))){
 			System.out.println("Please input a String");
-			sc.next();
+			sc.nextLine();
 		}
-		String word = sc.next();
+		String word = sc.nextLine();
 		return word;
 	}
 	

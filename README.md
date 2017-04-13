@@ -12,10 +12,14 @@ This project uses a movie domain and Java to connect to a SQL database and serve
 
 ## Log in Credential
 Username = 'mytestuser'
+
 Password = 'mypassword'
 
 ## Executable Commands
 'CLASSPATH=$CLASSPATH:/usr/share/java/mysql.jar' **Note you will need to use your own path
+
 'export CLASSPATH'
+
 'javac Driver.java'
+
 'java Driver'

@@ -39,7 +39,7 @@ public class processSQL {
 				    for (int i = 1; i <= columns; ++i) {
 				        if (i > 1) System.out.print(",  ");
 				        String columnValue = result.getString(i);
-				        System.out.print(columnValue + " " + metaData.getColumnName(i));
+				        System.out.print(metaData.getColumnName(i) + ": " + columnValue);
 				    }
 				    System.out.println("");
 				}

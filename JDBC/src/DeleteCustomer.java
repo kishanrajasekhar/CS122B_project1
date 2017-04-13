@@ -13,19 +13,13 @@ public class DeleteCustomer
 	public void deleteCustomer() throws SQLException{
 		String[] names = getUserInput();
 		Statement select = connection.createStatement();
-		
+
 		//Create query in String format 
-		String tempStr = "DELETE FROM sales WHERE customer_id in (SELECT id FROM customers "
-			+ "WHERE first_name = '" + names[0] + "' and last_name = '" + names[1] + "');\n";
-		System.out.println(tempStr);	
-		
-		//Needs to be Update instead of Query because we are modifying the query
-		select.executeUpdate(tempStr); 
-		
-		//Create query in String format 
-		String tempStr2 = "DELETE FROM customers WHERE first_name = '" + names[0] + "' and last_name = '" + names[1] + "';\n";
+		String tempStr2 = "DELETE FROM customers WHERE first_name = '" + names[0] + "' and last_name = '" + names[1] + "';";
 		System.out.println(tempStr2);	
 		select.executeUpdate(tempStr2);
+		//since the sales table foreign key cascades upon deletion
+		//we do not need to modify anything there
 		
 	}
 	
@@ -40,7 +34,6 @@ public class DeleteCustomer
 		result[0] = firstName;
 		result[1] = lastName;
 		return result;
-		
-		
-	}
-}
+	} //end getUserInput
+	
+} //end DeleteCustomer

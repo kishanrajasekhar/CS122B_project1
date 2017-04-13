@@ -40,7 +40,6 @@ public class MyJDBCProgram {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("Error: queryMovie");
-			e.printStackTrace();
 		}
 	}	
 

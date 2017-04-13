@@ -19,7 +19,7 @@ public class processSQL {
 		System.out.println("Enter a SQL command(SELECT, UPDATE, INSERT, DELETE): ");
 		String query = sc.nextLine().trim();
 		String[] args = query.split("\\s+"); //remove whitespace
-		String command = args[0];
+		String command = args[0].toUpperCase();
 		ResultSet result = null;
 		ResultSetMetaData metaData;
 		int returnID;

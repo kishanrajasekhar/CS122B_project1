@@ -28,28 +28,22 @@ public class Driver {
 							jdbc.queryMovie();
 							break;
 						case 2:
-							System.out.println("insertNewStar function");
 							jdbc.insertStar();
 							break;
 						case 3:
-							System.out.println("insertCustomer function");
 							jdbc.insertCustomer();
 							break;
 						case 4:
-							System.out.println("deleteCustomer function");
 							jdbc.deleteCustomer();
 							break;
 						case 5:
-							System.out.println("getMetadata function");
 							jdbc.printMetadata();
 							break;
 						case 6:
-							System.out.println("processSQL function");
 							jdbc.processSQLQuery();
 							break;
 						case 7:
-							System.out.println("Exited the menu. Have a fantastic day everyone");
-							return;
+							break;
 						default:
 							System.out.println("Invalid selection");
 							break;
@@ -62,7 +56,6 @@ public class Driver {
 			}
 			catch(InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e){
 				System.out.println("Connection Error or Login Error");
-				e.printStackTrace();
 			}
 		}
 	}

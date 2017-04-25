@@ -19,7 +19,7 @@ public class MovieQuery {
 		String firstName, lastName, id, query = null;
 		switch(option){
 		case 1:
-			System.out.print("Enter movie id: ");
+			System.out.print("Enter star id: ");
 			id = sc.nextLine();
 			query = getMovieQueryFromId(id);
 			break;
@@ -47,7 +47,7 @@ public class MovieQuery {
 	/* Prints the user's options for input parameters */
 	private void printOptions(){
 		System.out.println("Select an option (1 to 4):");
-		System.out.println("1. Enter movie id");
+		System.out.println("1. Enter star id");
 		System.out.println("2. Enter first name");
 		System.out.println("3. Enter last name");
 		System.out.println("4. Enter first and last name");
@@ -55,7 +55,7 @@ public class MovieQuery {
 	
 	/* Returns the completed query using a star's id */
 	private String getMovieQueryFromId(String id){
-		return "SELECT * FROM movies WHERE id="+id+";";
+		return "SELECT * from movies where id in (SELECT movie_id FROM stars_in_movies WHERE star_id="+id+");";
 	}
 	
 	/* Returns the completed query using a star's name */
